@@ -32,6 +32,8 @@ else
 
 // EJERCICIO 2 Y 3
 
+using System.Runtime.CompilerServices;
+
 float solicitarNumero()
 {
     string numString = Console.ReadLine();
@@ -44,6 +46,7 @@ float solicitarNumero()
     }
     return num;
 }
+
 
 float suma(float num1, float num2)
 {
@@ -62,11 +65,52 @@ float division(float num1, float num2)
     return num1 / num2;
 }
 
+void maximoMinimo(float num1, float num2)
+    {
+        if (num1 > num2)
+    {
+        Console.WriteLine("Maximo: " + num1);
+        Console.WriteLine("Minimo: " + num2);
+    }
+    else if (num2 > num1)
+    {
+        Console.WriteLine("Maximo: " + num2);
+        Console.WriteLine("Minimo: " + num1);
+    }
+    else
+    {
+        Console.WriteLine("Los dos numeros son iguales");
+    }
+}
+
+Console.Write("Ingrese un numero: ");
+float num = solicitarNumero();
+
+Console.WriteLine("|" + num + "| = " + Math.Abs(num));
+Console.WriteLine(num + "^2 = " + num * num);
+if (num >= 0)
+{
+    Console.WriteLine("Raiz cuadrada de " + num + " = " + Math.Sqrt(num));
+}
+else
+{
+   Console.WriteLine("No podemos calcular raiz cuadrada de un numero negativo"); 
+}
+Console.WriteLine("sen(" + num + ") = " + Math.Sin(num));
+Console.WriteLine("cos(" + num + ") = " + Math.Cos(num));
+Console.WriteLine("Parte entera de " + num + " = " + Math.Truncate(num));
+
+Console.WriteLine("=====================");
+
+Console.Write("Ingrese el numero 1: ");
+float num1 = solicitarNumero();
+Console.Write("Ingrese el numero 2: ");
+float num2 = solicitarNumero();
+
 string opcionString;
 int opcionInt = 0;
-float num1, num2;
 
-while (opcionInt != 5)
+while (opcionInt != 6)
 {
     Console.WriteLine("\n================================\n");
     Console.WriteLine("Seleccione una opcion:");
@@ -74,7 +118,8 @@ while (opcionInt != 5)
     Console.WriteLine("2. Restar");
     Console.WriteLine("3. Multiplicar");
     Console.WriteLine("4. Dividir");
-    Console.WriteLine("5. Salir");
+    Console.WriteLine("5. Maximo y Minimo");
+    Console.WriteLine("6. Salir");
 
     opcionString = Console.ReadLine();
 
@@ -107,6 +152,9 @@ while (opcionInt != 5)
                 {
                     Console.WriteLine("Error, division en cero");
                 }
+                break;
+            case 5:
+                maximoMinimo(num1, num2);
                 break;
         }   
     }
