@@ -112,4 +112,4 @@ while (opcionInt != 5)
     }
 }
 
-Console.WriteLine("Saliendo...");
+Console.WriteLine("Saliendo..."); 
