@@ -102,11 +102,7 @@ Console.WriteLine("Parte entera de " + num + " = " + Math.Truncate(num));
 
 Console.WriteLine("=====================");
 
-Console.Write("Ingrese el numero 1: ");
-float num1 = solicitarNumero();
-Console.Write("Ingrese el numero 2: ");
-float num2 = solicitarNumero();
-
+float num1, num2;
 string opcionString;
 int opcionInt = 0;
 
